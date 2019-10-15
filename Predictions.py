@@ -10,7 +10,6 @@ import base64
 import json
 
 
-UPLOAD_URL = 'http://192.168.0.11:4000/static/'
 app = Flask(__name__)
 CORS(app, headers=['Content-Type'])
 
@@ -93,5 +92,5 @@ def predict(network=model):
             })
 
 
-port = int(os.environ.get("PORT", 4001))
+port = int(os.environ.get("PORT", 4002))
 app.run(host='192.168.0.11', port=port)
