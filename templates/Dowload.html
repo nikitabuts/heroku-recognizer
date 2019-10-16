@@ -1,103 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta chatset="UTF-8">
+    <title>Document</title>title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/JavaScript/draw.js" defer></script>
 
-    <title>Handwritten digit recognition</title>
-    <link href="/static/css/boostrap.min.css" rel="stylesheet">
-
-    <link href="/static/css/small-business.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
-
-    <script src="/static/JavaScript/shiv.js"></script>
-    <script src="/static/JavaScript/respond.min.js"></script>
-
-</head>
-
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="row clearfix">
-            <div class="col-md-3" align="center">
-				<div style="position: relative;">
-					<canvas id="the_stage" width="600" height="600" align="center">Canvas</canvas><br>
-					</div>
-				<div style="position: relative;">
-					<button type="button" class="btn btn-default butt" onclick="clearCanvas()" align="center">Clear</button>
-					<button type="button" class="btn btn-default butt" id="pred" onclick="predict()" align="center">Predict</button>
-					</div>
-            </div>
-
-            <div class="col-md-7">
-				<div class="row" id="pr">
-					<div class="col-md-8"><span id="pred_text">Prediction result:</span> <span id="rec_result"> </span></div>
-					<div class="col-md-4"><button type="button" class="btn btn-default butt" onclick="hide_show()" id="hide_show_btn" style="display: none;">Show info</button></div>
-				</div>
-				<div class="row clearfix">
-					<div id="prediction" style="display: none;">
-						<span id="question">Is the prediction correct?</span>
-						<button type="button" class="btn btn-default butt" id="Да" onclick="positive_pred()">Yes</button>
-						<button type="button" class="btn btn-default butt" id="Нет" onclick="negative_pred()">No</button>
-						<button type="button" class="btn btn-default butt" id="Что-то другое" onclick="nothing()">It wasn't a number</button>
-					</div>
-					<span id="answer_reaction"> </span>
-					<div id="digit_form" style="display: none;">
-						<select id="digits">
-							<option value="parabola">0</option>
-							<option value="hyperbola">1</option>
-							<option value="sigmoid">2</option>
-							<option value="linear">3</option>
-							<option value="abs">4</option>
-						</select>
-						<button type="button" class="btn btn-default butt" onclick="submit_correct_digit()">Confirm</button>
-					</div>
-				</div>
-            </div>
-        </div>
-
-
-        <hr>
-
-        <div class="row">
-            <div class="col-md-4">
-                <h2>О приложении</h2>
-                <p>Это приложение может распознавать типы графиков функций(пока только 5).Нарисуйте цифру на холсте и нажмите кнопку "Predict", чтобы увидеть предсказание. Нажмите кнопку "Clear", чтобы нарисовать что-то другое.</p>
-            </div>
-            <div class="col-md-4">
-                <h2>Сбор данных</h2>
-                <p>Нарисованные изображения сохраняются.</p><br>
-            </div>
-        </div>
-
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; <a href="https://github.com/nikitabuts">Github</a></p>
-                </div>
-            </div>
-        </footer>
-
+    <h1>Graph-recognizer</h1>
+    <div class="content">
+        <h1 style="text-align: center"></h1>
     </div>
-    <script src="/static/JavaScript/jquery.js"></script>
-    <script src="/static/JavaScript/bootstrap.min.js"></script>
-	<script src="/static/JavaScript/draw.js"></script>
+</head>
+<body>
+    <div>
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit">
+        </form>
+    </div>
 </body>
-
 </html>

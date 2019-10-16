@@ -70,28 +70,5 @@ def draw_prediction(network=model):
 
 
 
-@app.route("/predict", methods=["POST"])
-def predict(network=model):
-    if request.method == 'POST':
-        # check if the post request has the file part
-        if 'file' not in request.files:
-            return "something went wrong!"
-
-        user_file = request.files['file']
-        if user_file.filename == '':
-            return "file name not found ..."
-
-        else:
-            path = os.path.join("C:\\server" + '\\static\\' + user_file.filename)
-            user_file.save(path)
-            classes, conf = Predict(model=network, image_path=path).prediction()
-            return jsonify({
-                "status": "success",
-                "prediction": classes,
-                "confidence": str(conf),
-                "upload_time": datetime.now()
-            })
-
-
 port = int(os.environ.get("PORT", 4016))
 app.run(host='192.168.0.11', port=port)
