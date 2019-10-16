@@ -64,6 +64,4 @@ def predict(network=model):
                 "upload_time": datetime.now()
             })
 
-
-port = int(os.environ.get("PORT", 4017))
-app.run(host='192.168.0.11', port=port)
+app.run(host='192.168.0.11', port=4017)
