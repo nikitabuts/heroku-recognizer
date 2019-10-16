@@ -3,9 +3,5 @@ Flask-Cors==3.0.8
 numpy==1.17.2
 pandas==0.25.1
 Pillow==6.2.0
-<<<<<<< HEAD
 https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp37-cp37m-linux_x86_64.whl
-=======
-http://download.pytorch.org/whl/cpu/torch-0.4.1-cp36-cp36m-linux_x86_64.whl
->>>>>>> 1f206b12a70f53c7bbea40e6be154a50bca3a64f
 gunicorn==19.9.0
