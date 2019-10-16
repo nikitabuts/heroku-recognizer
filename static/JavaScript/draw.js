@@ -94,7 +94,7 @@ function mouseup(event) {
 
 function draw() {
     context.fillStyle = '#ffffff';
-    context.fillRect(0, 0, 200, 200);
+    context.fillRect(0, 0, 600, 600);
 }
 
 //Used mozilla docs for this code https://developer.mozilla.org/en-US/docs/Web/API/Touch_events
@@ -209,7 +209,7 @@ function findPos (obj) {
 
 
 function clearCanvas() {
-    context.clearRect (0, 0, 200, 200);
+    context.clearRect (0, 0, 600, 600);
     draw();
     document.getElementById("hide_show_btn").style.display = "none";
     document.getElementById("prediction").style.display = "none";
@@ -268,7 +268,7 @@ function predict() {
 	document.getElementById("rec_result").innerHTML = "Predicting...";
 	document.getElementById("prediction").style.display = "none";
 
-	if (document.getElementById("hide_show_btn").innerHTML == 'Hide info') {
+	if (document.getElementById("hide_show_btn").innerHTML === 'Hide info') {
 		document.getElementById("hidable").style.display = "block";
 	} else {
 		document.getElementById("hidable").style.display = "none";
@@ -284,7 +284,7 @@ function predict() {
 		}
 	}).done(function(response) {
 		console.log(response)
-		if (response == "Can't predict, when nothing is drawn") {
+		if (response === "Can't predict, when nothing is drawn") {
 			document.getElementById("hide_show_btn").style.display = "none";
 			document.getElementById("prediction").style.display = "none";
 			document.getElementById("hidable").style.display = "none";

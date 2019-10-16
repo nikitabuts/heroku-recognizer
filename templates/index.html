@@ -40,7 +40,7 @@
         <div class="row clearfix">
             <div class="col-md-3" align="center">
 				<div style="position: relative;">
-					<canvas id="the_stage" width="200" height="200" align="center">Canvas</canvas><br>
+					<canvas id="the_stage" width="600" height="600" align="center">Canvas</canvas><br>
 					</div>
 				<div style="position: relative;">
 					<button type="button" class="btn btn-default butt" onclick="clearCanvas()" align="center">Clear</button>
@@ -52,6 +52,24 @@
 				<div class="row" id="pr">
 					<div class="col-md-8"><span id="pred_text">Prediction result:</span> <span id="rec_result"> </span></div>
 					<div class="col-md-4"><button type="button" class="btn btn-default butt" onclick="hide_show()" id="hide_show_btn" style="display: none;">Show info</button></div>
+				</div>
+				<div class="container" id="hidable" style="display: none;">
+					<div>
+						<div class="col-md-7">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>NN</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td id="NN"> </td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 				<div class="row clearfix">
 					<div id="prediction" style="display: none;">
@@ -75,7 +93,6 @@
             </div>
         </div>
 
-
         <hr>
 
         <div class="row">
@@ -86,6 +103,26 @@
             <div class="col-md-4">
                 <h2>Сбор данных</h2>
                 <p>Нарисованные изображения сохраняются.</p><br>
+            </div>
+        </div>
+            <div class="col-md-4">
+                <h2>Models performance</h2>
+                <table class="table">
+					<thead>
+						<tr>
+							<th>Model</th>
+							<th>accuracy</th>
+							<th>Worst predicted graph</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>NN</td>
+							<td id="NN_Accuracy">97%</td>
+							<td id="NN_bad_graph">sigmoid (95%)</td>
+						</tr>
+					</tbody>
+				</table>
             </div>
         </div>
 

@@ -14,15 +14,16 @@ app = Flask(__name__)
 CORS(app, headers=['Content-Type'])
 
 
-def load_dict(PATH="C:\\best_model.pth"):
+def load_dict(PATH="model/best_model.npy"):
     model = Net()
-    model.load_state_dict(torch.load(PATH), strict=False)
+    model.load_state_dict(torch.load(PATH))
     model.eval()
     model.train()
     return model
 
 
 model = load_dict()
+
 
 
 class Predict:
@@ -92,5 +93,5 @@ def predict(network=model):
             })
 
 
-port = int(os.environ.get("PORT", 4002))
+port = int(os.environ.get("PORT", 4016))
 app.run(host='192.168.0.11', port=port)
