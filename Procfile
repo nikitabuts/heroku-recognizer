@@ -1,1 +1,1 @@
-web: python Predictions.py runserver 192.168.0.11:4016
+web: gunicorn application:app --log-level debug
