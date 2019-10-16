@@ -25,7 +25,6 @@ def load_dict(PATH="model/best_model.npy"):
 model = load_dict()
 
 
-
 class Predict:
     def __init__(self, model, image_path=None, image=None):
         self.net = model

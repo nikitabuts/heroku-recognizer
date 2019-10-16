@@ -1,2 +1,6 @@
 Numpy
 torch
+pillow
+flask-cors
+flask
+pandas
