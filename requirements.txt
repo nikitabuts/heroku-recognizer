@@ -1,6 +1,6 @@
-Numpy
-torch
-pillow
-flask-cors
-flask
-pandas
+Flask==1.1.1
+Flask-Cors==3.0.8
+numpy==1.17.2
+pandas==0.25.1
+Pillow==6.2.0
+torch==1.2.0
